@@ -10,11 +10,6 @@ import org.testng.ITest;
 import org.testng.annotations.ITestAnnotation;
 import org.testng.TestNG;
 
-import org.junit.BeforeClass;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -39,9 +34,7 @@ public class AppTest implements IAnnotationTransformer
 		}
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
-		String max_login = prop.getProperty("max_login");
-		String max_browser_parallel = prop.getProperty("max_browser_parallel");
-		System.out.println("BYE: " + username);
+		System.out.println("Hi: " + username);
 		WebDriver driver = new FirefoxDriver();		
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         	driver.get("https://www.radimage.it/3gs/");
