@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.FileInputStream;
 
-public class AppTest implements IAnnotationTransformer 
+public class AppTest
 {
     @Test(invocationCount = 1, threadPoolSize = 1)
     public void shouldAnswerWithTrue()
