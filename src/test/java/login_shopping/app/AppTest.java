@@ -5,10 +5,6 @@ import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.IAnnotationTransformer;
-import org.testng.ITest;
-import org.testng.annotations.ITestAnnotation;
-import org.testng.TestNG;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
