@@ -26,32 +26,6 @@ import java.io.FileInputStream;
 
 public class AppTest implements IAnnotationTransformer 
 {
-    @Override
-    public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
-	System.out.println("SONO QUI CIAO A TUTTI!!!! :-)");
-	System.out.println(testMethod.getName());
-   	if ("shouldAnswerWithTrue".equals(testMethod.getName())) {
-		Properties prop = new Properties();
-		InputStream inputStream=null;
-		try {
-			inputStream = new FileInputStream("resources/config.properties");
-                	if (inputStream != null) {
-				prop.load(inputStream);
-                	} else {
-				throw new FileNotFoundException("property file not found in the classpath");
-                	}
-    			String username = prop.getProperty("username");
-    			String password = prop.getProperty("password");
-    			int max_login = Integer.parseInt(prop.getProperty("max_login"));
-    			int max_browser_parallel = Integer.parseInt(prop.getProperty("max_browser_parallel"));
-			System.out.println("qui.");
-     			annotation.setInvocationCount(15);
-                } catch (Exception ex) {
-                        System.out.println("Errore qui.");
-                }
-   	}
-    }
-
     @Test(invocationCount = 1, threadPoolSize = 1)
     public void shouldAnswerWithTrue()
     {
